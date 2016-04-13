@@ -1,0 +1,11 @@
+{
+  "applications": {
+    "EventCamBot2": {
+      "parseAppId": "zCsQwvBmlHHf0NwRgnWngUlf3J7eRys71EXmOPyU",
+      "herokuAppId": "67c27f03-84a1-47dd-9e27-5e0e47b11d8f"
+    },
+    "_default": {
+      "link": "EventCamBot2"
+    }
+  }
+}
