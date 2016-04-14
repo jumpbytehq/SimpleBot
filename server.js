@@ -50,7 +50,7 @@ app.post('/webhook/', function(req, res) {
 			}else if(text.indexOf("notify") == 0){
 				sendTextMessage(sender, "This feature will be available soon.");
 			}else{
-				sendTextMessage(sender, "Please type 'help', 'event (eventname)', 'notify (eventname)' for more detail.");
+				sendTextMessage(sender, "Please type 'help', 'event (eventname)', 'notify (eventname)' for more detail. For any other information please visit http://eventcam.in");
 			}
 		}
 	}
