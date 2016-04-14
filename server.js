@@ -42,23 +42,15 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			text = event.message.text;
 			// Handle a text message from this sender
-			if(text.toLowerCase() == "help"){
-				sendTextMessage(sender, "Please visit our website http://eventcam.in for all the information.");
-			}else if(text.toLowerCase().indexOf("event") == 0){
-				var event = text.split(" ")[1];
-				sendTextMessage(sender, "Please visit http://eventcam.in/" + event + " for event photos");
-			}else if(text.toLowerCase().indexOf("notify") == 0){
-				sendTextMessage(sender, "This feature will be available soon.");
-			}else{
-				sendTextMessage(sender, "Please type 'help', 'event (eventname)', 'notify (eventname)' for more detail. For any other information please visit http://eventcam.in");
-			}
+			sendTextMessage(sender, "Message Echo: " + text);
+			
 		}
 	}
 
 	res.sendStatus(200);
 });
 
-var token = "EAAHbWFzW5fQBABr3kPZB1MpDgUGLZCZAZCX7e5WDZCfgDUT7RNYJV8gAfNHmcKloSuC2CZCPpxz5IGD6ZCRM1AC08gg1nnx0TwbTYoVr20IPnUUWJ2wJXqx1HmwgFxjGZB0T9jHLLaH7ex3wbrKY6w0OeAzluNFFInsk05ohbG34VgZDZD";
+var token = "replace your page token here";
 
 function sendTextMessage(sender, text) {
   messageData = {
