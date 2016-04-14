@@ -44,11 +44,13 @@ app.post('/webhook/', function(req, res) {
 			// Handle a text message from this sender
 			if(text == "help"){
 				sendTextMessage(sender, "Please visit our website http://eventcam.in for all the information.");
-			}else if(text.indexOf("event") == 1){
+			}else if(text.indexOf("event") == 0){
 				var event = text.split(" ")[1];
 				sendTextMessage(sender, "Please visit http://eventcam.in/" + event + " for event photos");
+			}else if(text.indexOf("notify") == 0){
+				sendTextMessage(sender, "This feature will be available soon.");
 			}else{
-				sendTextMessage(sender, "Please type 'help' or 'event (eventname)' for more detail.");
+				sendTextMessage(sender, "Please type 'help', 'event (eventname)', 'notify (eventname)' for more detail.");
 			}
 		}
 	}
