@@ -4,8 +4,8 @@ var http = require('http'),
     bodyParser = require('body-parser'),
     Parse = require('parse/node'),
     ParseCloud = require('parse-cloud-express'),
-    bodyParser = require('body-parser');
-
+    bodyParser = require('body-parser'),
+	request = require('request');
 var app = express();
 
 // parse application/x-www-form-urlencoded
