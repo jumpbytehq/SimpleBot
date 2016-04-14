@@ -42,7 +42,14 @@ app.post('/webhook/', function(req, res) {
 		if (event.message && event.message.text) {
 			text = event.message.text;
 			// Handle a text message from this sender
-			sendTextMessage(sender, "Text received, echo: "+ text.substring(0, 200));
+			if(text == "help"){
+				sendTextMessage(sender, "Please visit our website http://eventcam.in for all the information.");
+			}else if(text.indexOf("event") == 1){
+				var event = text.split(" ")[1];
+				sendTextMessage(sender, "Please visit http://eventcam.in/" + event + " for event photos");
+			}else{
+				sendTextMessage(sender, "Please type 'help' or 'event (eventname)' for more detail.");
+			}
 		}
 	}
 
