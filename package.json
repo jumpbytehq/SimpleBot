@@ -13,7 +13,8 @@
     "express": "~4.9.x",
     "jsonfile": "~2.2.3",
     "parse": "~1.6",
-    "parse-cloud-express": "~1.0"
+    "parse-cloud-express": "~1.0",
+    "request": "^2.71.0"
   },
   "engines": {
     "node": "0.12.2"
