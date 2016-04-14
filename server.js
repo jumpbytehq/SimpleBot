@@ -3,9 +3,16 @@ var http = require('http'),
     express = require('express'),
     bodyParser = require('body-parser'),
     Parse = require('parse/node'),
-    ParseCloud = require('parse-cloud-express');
+    ParseCloud = require('parse-cloud-express'),
+    bodyParser = require('body-parser');
 
 var app = express();
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// parse application/json
+app.use(bodyParser.json())
 
 // Import your cloud code (which configures the routes)
 require('./cloud/main.js');
